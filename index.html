@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/30573fb7a0.js'  crossorigin='anonymous'></script>
+    
+    <style>
+        * {
+            background-color: black;
+            color: white;
+        }
+
+        .maindiv {
+            /* border: 1px solid rgb(110, 69, 69); */
+            width: 75%;
+            height: 484px;
+            margin: auto;
+        }
+
+        h1 {
+            margin: 0px;
+        }
+
+        .maindiv>:nth-child(1) {
+            text-align: center;
+        }
+
+        input {
+            width: 99%;
+            height: 40px;
+            font-size: 20px;
+            border: none;
+            border-bottom: 1px solid white;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            margin-top: 10px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #displaydiv {
+            display: flex;
+        }
+
+        #tempdiv {
+            width: 440px;
+            height: 450px;
+            /* border: 1px solid blue; */
+            display: flex;
+            height: 190px;
+        }
+        #dailydiv{
+            /* border: 1px solid blue; */
+            width: 40%;
+            height: 120px;
+            display: flex;
+            margin-left: 20px;
+        }
+        .day{
+            border: 1px solid rgb(24, 23, 23);
+            height: 98%;
+            width: 15%;
+            text-align: center;
+        }
+        .day:hover{
+            background-color: rgb(8, 8, 8);
+            width: 17%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="maindiv">
+        <div>
+            <h1>Weather Info App</h1>
+        </div>
+        <label for="city">City Name</label>
+        <br>
+        <input id="city" type="text" placeholder="Search....">
+        <button onclick="getWeather()">Search</button>
+        <hr>
+        <div id="displaydiv">
+            <div id="tempdiv" >
+               <div id=" div1" style="margin-right: 40px;">
+                <i style="font-size:90px;margin: 10px;" class="fas fa-cloud"></i>
+                <h2 id="h21" style="margin-left: 10px
+                ;">Clouds</h2>
+            </div>
+            <div id="div2" style="width: 60%;">
+               
+             <div style="display: flex;margin-bottom: 15px;">
+                <span style="margin-right: 12px;font-size: 20px;" class="fas fa-map-marked-alt"></span>
+                <span>
+                    <h2 id="h22" style="margin: 0px;"> New Delhi</h2>
+                </span>
+            </div>
+
+            <div style="display: flex;margin-bottom: 15px;">
+                <span style="margin-right: 12px;font-size: 20px;" class="iconify" data-icon="fa-solid:temperature-high"></span>
+                <span>
+                    <h2 id="h23" style="margin: 0px;">30 &#x2103</h2>
+                </span>
+            </div>
+
+            <div style="display: flex;margin-bottom: 15px;">
+              <span style="margin-right: 12px;font-size: 20px;" class="iconify" data-icon="fa-solid:temperature-low"></span>
+              <span>
+                  <h2 id="h233" style="margin: 0px;">25 &#x2103</h2>
+              </span>
+          </div>
+
+            <!-- ---------------- -->
+            
+            
+            <div style="display: flex;margin-bottom: 15px;">
+                
+                <span style="margin-right: 12px;font-size: 20px;" class="iconify" data-icon="carbon:humidity"></span>
+                <span>
+                    <h2 id="h24" style="margin: 0px;">34</h2>
+                </span>
+            </div> <div style="display: flex;margin-bottom: 15px;">
+                <span style="margin-right: 12px;font-size: 20px;" class="iconify" data-icon="carbon:pressure"></span>
+                <span>
+                    <h2 id="h25" style="margin: 0px;">1012 mb</h2>
+                </span>
+            </div> <div style="display: flex;margin-bottom: 15px;">
+                <span style="margin-right: 12px;font-size: 20px;" class="iconify" data-icon="bi:wind"></span>
+                <span>
+                    <h2 id="h26" style="margin: 0px;">4.11 km/h</h2>
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="mapouter">
+            <div class="gmap_canvas"><iframe style="border-radius: 12px
+                ;" width="100%" height="450" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=new delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                    href="https://123movies-org.net"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 100px;
+                        width: 50%px;
+                    }
+                </style><a href="https://www.embedgooglemap.net">google map on your website</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 500px;
+                        width: 600px;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+     <div id="dailydiv">
+         <div class="day">
+             SUN<br><span style="font-size: 45px
+         ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span><h3 class="max1" style="margin: 0px;">29 &#x2103</h3>
+         <h5 class="min1" style="margin: 0px; margin-top: 4px;">25 &#x2103</h5>
+        </div>
+         <div class="day">MON<br><span style="font-size: 45px
+            ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+            <h3 class="max1" style="margin: 0px;">28 &#x2103</h3>
+            <h5 class="min1" style="margin: 0px; margin-top: 4px;">28 &#x2103</h5></div>
+         <div class="day">TUE<br><span style="font-size: 45px
+            ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+            <h3 class="max1" style="margin: 0px;">31 &#x2103</h3>
+            <h5 class="min1" style="margin: 0px; margin-top: 4px;">27 &#x2103</h5></div>
+         <div class="day">WED<br><span style="font-size: 45px
+            ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+            <h3 class="max1" style="margin: 0px;">30 &#x2103</h3>
+            <h5 class="min1" style="margin: 0px; margin-top: 4px;">26 &#x2103</h5></div>
+         <div class="day">THUR<br><span style="font-size: 45px
+            ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+            <h3 class="max1" style="margin: 0px;">28 &#x2103</h3>
+            <h5 class="min1" style="margin: 0px; margin-top: 4px;">24 &#x2103</h5></div>
+         <div class="day">FRI <br><span style="font-size: 45px
+            ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+            <h3 class="max1" style="margin: 0px;">35 &#x2103</h3>
+            <h5 class="min1" style="margin: 0px; margin-top: 4px;">28 &#x2103</h5></div>
+             <div class="day">SAT
+                 <br><span style="font-size: 45px
+                ; margin-top: 3px;" class="iconify" data-icon="fluent:weather-hail-day-48-regular"></span>
+                <h3 class="max1" style="margin: 0px;">30 &#x2103</h3>
+                <h5 class="min1" style="margin: 0px; margin-top: 4px;">25 &#x2103</h5></div>
+     </div>
+</body>
+
+</html>
+<script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+<script>
+    // let key = "ac7f7e01692580bb39ca9cf21577d99b"
+    // let city=document.getElementById("city").value
+    // let url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ac7f7e01692580bb39ca9cf21577d99b"
+
+    // getWeather() ;
+    async function getWeather() {
+
+        try {
+            let map = document.getElementById("gmap_canvas")
+            let city = document.getElementById("city").value
+            let url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=ac7f7e01692580bb39ca9cf21577d99b";
+
+            map.src = "https://maps.google.com/maps?q=" + city + "&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            let res = await fetch(url)
+            let data = await res.json();
+
+            let tempmax = data.main.temp_max;
+            let tempmin = data.main.temp_min;
+            tempmax = Math.round(tempmax - 273)
+            tempmin = Math.round(tempmin - 273)
+            console.log(data)
+            // <p style="color: white;">&#x2103</p>
+            let = humidity = data.main.humidity
+            let pressure = data.main.pressure
+            let speed = data.wind.speed
+            let cloud = data.weather[0].main
+            let tempdiv = document.getElementById("tempdiv");
+            let h21 = document.getElementById("h21")
+            let h22 = document.getElementById("h22")
+            let h23 = document.getElementById("h23")
+            let h233 = document.getElementById("h233")
+            h21.textContent = cloud
+            h22.textContent = city
+            h23.innerHTML =tempmax+"&#x2103"
+            h233.innerHTML =tempmin+"&#x2103"
+            h24.innerHTML =humidity
+            h25.innerHTML =pressure+"mb"
+            h26.innerHTML =speed+" km/h"
+
+            let lon=data.coord.lon
+            let lat=data.coord.lat
+            
+            
+
+            dailydata();
+            let max=document.querySelectorAll(".max1")
+            let min=document.querySelectorAll(".min1")
+            let i=0
+            async function dailydata()
+            {
+                let url2="https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&appid=ac7f7e01692580bb39ca9cf21577d99b&units=metric"
+
+                let res2=await fetch(url2)
+                let data2= await res2.json()
+                console.log(data2.daily)
+                
+
+                data2.daily.forEach(function(item){
+                    let mindata=item.temp.min
+                let maxdata=item.temp.max
+                max[i].innerHTML=maxdata+"&#x2103"
+                min[i].innerHTML=mindata+"&#x2103"
+                i++
+                })
+            }
+        }
+        catch (err) {
+            alert("invalid name")
+            console.log("err:", err)
+        }
+        finally {
+            console.log("worked finally")
+        }
+    }
+    
+</script>
