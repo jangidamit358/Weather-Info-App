@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="img.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <div id="nav1">
+           <div id="imgurlogo">
+               <img id="img1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Imgur_Logo_Light.svg/1280px-Imgur_Logo_Light.svg.png" alt=""/>
+           </div>
+           <div id="newpost">
+               <div class="newpost1"><img id="img2" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg" alt=""></div>
+               <div class="newpost2">New post</div>
+           </div>
+           <div id="input1">
+               <input id="search1" type="search" placeholder="images,#tags,@users, oh my!">
+           </div>
+           <div id="icon2">
+               <div id="a1"><img id="img3" src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg" alt=""></div>
+               <div id="a2">Go Ad-Free</div>
+               <div id="a3">Sign in</div>
+               <div id="a4">Sign up</div>
+           </div>
+         </div>
+        <div id="container1">
+            <div id="ca1" >
+                <div id="ca11"><span class="material-icons">chevron_left</span></div>
+                <div id="ca12">
+                    <div class="ca121"><span class="material-icons">chevron_left</span></div>
+                    <div class="ca121"><span class="material-icons">chevron_left</span></div>
+                    <div class="ca121"><span class="material-icons">chevron_left</span></div>
+                    <div class="ca121"><span class="material-icons">chevron_left</span></div>
+                </div>
+                <div id="ca13"><span class="material-icons">chevron_left</span></div>
+            </div>
+            <div id="ca2">
+                <div class="caa2">
+                    <div id="ca21">Needed this for a thing. Maybe you will too.</div>
+                    <div id="ca22"> <div id="ca221"><span class="material-icons">chevron_left</span> Next <span class="material-icons">navigate_next </span> </div></div>
+                </div>
+                <div id="circle">
+                    <div id="circle1">
+                        <div id="round"><b>M</b></div>
+                    </div>
+                    <div id="circle2">
+                        <div>
+                         <div id="text1">
+                          <div id="cir1">ahorsebelodeprime</div>
+                          <div id="cir2">thisis</div> 
+                         </div>  
+                    </div>
+                    <div id="circle3">
+                        <li>11243 views</li>
+                        <li>11h</li>
+                        <li>via android</li>  
+                    </div>
+                    <div id="imgarea">
+                    <img id="dummyimage" src="https://pbs.twimg.com/media/FNLjMAKWUAYBmY1?format=jpg&name=small" alt="">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="ca3"> 
+            <div id="ca31"><img src="https://cdn.uc.atwola.com/passbacks/300x250_DV_IAS_.jpg" alt=""></div>
+            <p><b> NEWEST IN MOST VIRAL</b></p>
+            <hr>
+            <div id="smallpic">
+                <div id="sm1">
+                    <img id="smimg" src="https://pbs.twimg.com/media/FNLjMAKWUAYBmY1?format=jpg&name=small" alt="">
+                </div>
+                <div id="sm2"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum deserunt obcaecati </p></div>
+            </div>
+            <div id="smallpic">
+                <div id="sm1">
+                    <img id="smimg" src="https://pbs.twimg.com/media/FNLjMAKWUAYBmY1?format=jpg&name=small" alt="">
+                </div>
+                <div id="sm2"><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum deserunt obcaecati </p></div>
+            </div>
+        </div>
+    </div>
+    <div id="right">
+    </div>
+</body>
+</html>
+<script>
+    var arrowupp=`&{Uparrow;}`;
+async function weatherseven(){
+    try{
+
+  let url="https://api.doge-meme.lol/v1/memes/";
+
+  let res=await fetch(url);
+
+  let data= await res.json();
+  
+  var newdata=data.data;
+ 
+  showProducts(newdata);
+    }
+    catch(err){
+    console.log(err)
+    }
+    finally{
+        console.log("Worked Finally for seven days data")
+    }
+}
+weatherseven()
+
+var right = document.getElementById("right");
+var mainDiv = document.createElement("div");
+mainDiv.setAttribute("id", "containermain");
+
+right.append(mainDiv);
+
+function showProducts(newdata) {
+  mainDiv.setAttribute("id", "containermain");
+  var count=0;
+  newdata.map(function (item) {
+    var imageDiv = document.createElement("div");
+        imageDiv.setAttribute("id","heart");
+    
+
+  
+      // console.log(count)
+     
+    //     //console.log(i)
+    //     if(%2!=0){
+    //         imageDiv.style.backgroundColor = "red"; 
+    //     }
+    //     else{
+    //         imageDiv.style.backgroundColor = "white"; 
+    //     }
+        
+    // var arrup=<i class="fa-solid fa-up"></i>
+    //console.log("yp",newdata[`0`])
+    var imdDiv = document.createElement("div");
+    imdDiv.setAttribute("id", "imdDiv");
+
+    var img = document.createElement("img");
+    img.setAttribute("src", item.submission_url);
+    img.setAttribute("id", "img");
+    
+    console.log(count)
+      if(count%4==0){
+        imageDiv.style.marginBottom="-20px"
+       // imageDiv.style.height="400px";
+        img.style.height="250px";
+      }
+      if(count%4==1){
+        imageDiv.style.marginBottom="-30px"
+       // imageDiv.style.height="350px";
+        img.style.height="300px";
+      }
+      if(count%4==2){
+        imageDiv.style.marginBottom="-80px"
+      //  imageDiv.style.height="350px";
+        img.style.height="200px";
+      }
+      if(count%4==3){
+       imageDiv.style.marginBottom="-150px"
+        //imageDiv.style.height="350px";
+        img.style.height="150px";
+      }
+     
+      count=count+1;
+
+    var p2 = document.createElement("p");
+    p2.textContent = item.submission_title;
+    p2.setAttribute("id", "p2");
+
+    var downdiv = document.createElement("div");
+    downdiv.setAttribute("id", "downdiv");
+
+    var span = document.createElement("span");
+    span.setAttribute("id", "span");
+    span.textContent="📩"+Math.floor(Math.random() * 100)
+
+    var span1 = document.createElement("span1");
+    span1.setAttribute("id", "span");
+    span1.textContent="⬆"+Math.floor(Math.random() * 1000)+"⬇";
+
+    var span2 = document.createElement("span");
+    span2.setAttribute("id", "span");
+    span2.textContent="👁"+Math.floor(Math.random() * 10)+"k";
+
+    // var span = document.createElement("span");
+    // span.setAttribute("id", "span");
+    // span.textContent="📩"
+    
+    downdiv.append(p2 ,span1, span, span2)
+
+    imdDiv.append(img)
+    
+    imageDiv.append(imdDiv,downdiv  );
+
+    mainDiv.append(imageDiv);
+  });
+}
+
+</script>
